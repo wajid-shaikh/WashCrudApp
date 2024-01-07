@@ -9,7 +9,7 @@ const Read = () => {
   const fetchSingleData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/getsinglesuperheroe/${id}`
+        `https://wash-crud-api.vercel.app/getsinglesuperheroe/${id}`
       );
       setSingleData(response.data.data);
     } catch (error) {

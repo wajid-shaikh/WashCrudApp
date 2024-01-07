@@ -28,7 +28,7 @@ const CreateUpdate = () => {
     // Implement your logic for handling the 'Add' or 'Update' button click here
     if (!id) {
       const response = await axios.post(
-        "http://localhost:3000/createsuperheroes",
+        "https://wash-crud-api.vercel.app/createsuperheroes",
         formData
       );
       console.log("Data posted successfully:", response.data);
@@ -40,7 +40,7 @@ const CreateUpdate = () => {
       });
     } else {
       const response = await axios.put(
-        `http://localhost:3000/updatesuperheroe/${id}`,
+        `https://wash-crud-api.vercel.app/updatesuperheroe/${id}`,
         formData
       );
       console.log("Data Updated successfully:", response.data);
@@ -55,7 +55,7 @@ const CreateUpdate = () => {
     const fetchSingleData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/getsinglesuperheroe/${id}`
+          `https://wash-crud-api.vercel.app/getsinglesuperheroe/${id}`
         );
         setFormData(response.data.data);
       } catch (error) {

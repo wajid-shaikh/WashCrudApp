@@ -9,7 +9,7 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/getallsuperheroes"
+        "https://wash-crud-api.vercel.app/getallsuperheroes"
       );
       setData(response.data.data);
       // setLoading(false);
@@ -20,7 +20,7 @@ const Home = () => {
 
   const deleteSuperHero = (id) => {
     if (confirm("Are you Sure to delete ?")) {
-      axios.delete(`http://localhost:3000/deletesuperheroe/${id}`);
+      axios.delete(`https://wash-crud-api.vercel.app/deletesuperheroe/${id}`);
       setTimeout(() => {
         fetchData();
       }, 100);
