@@ -53,6 +53,11 @@ app.post("/createsuperheroes", async (req, res) => {
 });
 
 // Get all SuperHeroes
+
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
+
 app.get("/getallsuperheroes", async (req, res) => {
   try {
     const superHeroes = await SuperHero.find();
