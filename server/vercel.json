@@ -1,8 +1,16 @@
 {
   "version": 2,
   "functions": {
-    "app/api/**/*": {
-      "maxDuration": 5
+    "api": {
+      "handler": "api/index.js",
+      "events": [
+        {
+          "http": {
+            "method": "GET",
+            "path": "/api/hello"
+          }
+        }
+      ]
     }
   },
   "builds": [{ "src": "*.js", "use": "@vercel/node" }],
@@ -11,5 +19,6 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ]
+  ],
+  "maxDuration": 30
 }
