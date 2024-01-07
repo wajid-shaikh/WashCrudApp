@@ -31,7 +31,7 @@ const SuperHero = mongoose.model("SuperHero", {
 app.use(express.json());
 app.use(
   cors({
-    origin: [""],
+    origin: ["https://wash-crud-frontend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
