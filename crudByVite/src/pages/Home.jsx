@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
+  console.log(API_URL);
   const [data, setData] = useState([]);
   // const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        "https://wash-crud-api.vercel.app/getallsuperheroes"
-      );
+      const response = await axios.get(`${API_URL}/getallsuperheroes`);
       setData(response.data.data);
       // setLoading(false);
     } catch (error) {
@@ -20,7 +20,7 @@ const Home = () => {
 
   const deleteSuperHero = (id) => {
     if (confirm("Are you Sure to delete ?")) {
-      axios.delete(`https://wash-crud-api.vercel.app/deletesuperheroe/${id}`);
+      axios.delete(`${API_URL}/deletesuperheroe/${id}`);
       setTimeout(() => {
         fetchData();
       }, 100);

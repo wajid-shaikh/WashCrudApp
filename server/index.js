@@ -29,13 +29,14 @@ const SuperHero = mongoose.model("SuperHero", {
 
 // Middleware to parse JSON requests
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://wash-crud-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://wash-crud-frontend.vercel.app",
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//   })
+// );
+app.use(cors());
 
 // Create a new SuperHero
 app.post("/createsuperheroes", async (req, res) => {

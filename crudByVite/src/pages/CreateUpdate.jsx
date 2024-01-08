@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CreateUpdate = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,7 +30,7 @@ const CreateUpdate = () => {
     // Implement your logic for handling the 'Add' or 'Update' button click here
     if (!id) {
       const response = await axios.post(
-        "https://wash-crud-api.vercel.app/createsuperheroes",
+        `${API_URL}/createsuperheroes`,
         formData
       );
       console.log("Data posted successfully:", response.data);
@@ -40,7 +42,7 @@ const CreateUpdate = () => {
       });
     } else {
       const response = await axios.put(
-        `https://wash-crud-api.vercel.app/updatesuperheroe/${id}`,
+        `${API_URL}/updatesuperheroe/${id}`,
         formData
       );
       console.log("Data Updated successfully:", response.data);
@@ -55,7 +57,7 @@ const CreateUpdate = () => {
     const fetchSingleData = async () => {
       try {
         const response = await axios.get(
-          `https://wash-crud-api.vercel.app/getsinglesuperheroe/${id}`
+          `${API_URL}/getsinglesuperheroe/${id}`
         );
         setFormData(response.data.data);
       } catch (error) {

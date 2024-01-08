@@ -2,15 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Read = () => {
   const [singleData, setSingleData] = useState({});
   const { id } = useParams();
 
   const fetchSingleData = async () => {
     try {
-      const response = await axios.get(
-        `https://wash-crud-api.vercel.app/getsinglesuperheroe/${id}`
-      );
+      const response = await axios.get(`${API_URL}/getsinglesuperheroe/${id}`);
       setSingleData(response.data.data);
     } catch (error) {
       console.error("Error fetching data:", error);
