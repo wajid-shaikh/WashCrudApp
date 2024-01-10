@@ -23,7 +23,7 @@ const Home = () => {
       axios.delete(`${API_URL}/deletesuperheroe/${id}`);
       setTimeout(() => {
         fetchData();
-      }, 100);
+      }, 1);
     }
   };
 
