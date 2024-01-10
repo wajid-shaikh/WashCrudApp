@@ -18,9 +18,9 @@ const Home = () => {
     }
   };
 
-  const deleteSuperHero = (id) => {
+  const deleteSuperHero = async (id) => {
     if (confirm("Are you Sure to delete ?")) {
-      axios.delete(`${API_URL}/deletesuperheroe/${id}`);
+      await axios.delete(`${API_URL}/deletesuperheroe/${id}`);
       setTimeout(() => {
         fetchData();
       }, 100);

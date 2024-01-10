@@ -16,9 +16,9 @@ const CreateUpdate = () => {
   const history = useNavigate();
 
   const handleChange = (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setFormData({
       ...formData,
       [name]: value,
