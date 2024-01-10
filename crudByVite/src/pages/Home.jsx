@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const Home = () => {
-  console.log(API_URL);
+  // console.log(API_URL);
   const [data, setData] = useState([]);
   // const [loading, setLoading] = useState(true);
 
